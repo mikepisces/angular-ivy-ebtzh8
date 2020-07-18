@@ -25,7 +25,22 @@ export class HomeComponent implements OnInit {
    }
 
   submitRegistration(){
-    
+
+    if(this.studentform.valid) {
+      this.validMessage = "Your details for admission have been submitted. Thank you!";
+      this.collegeService.createStudentForm(this.studentform.value).subscribe(
+        data=>{
+          this.studentform.reset();
+          return true;
+        },
+        error=>{
+          return Observable.throw(error);
+        }
+      )
+    }
+    else {
+      this.validMessage = "Please fill out the form before submitting";
+    }
   }
 
    
