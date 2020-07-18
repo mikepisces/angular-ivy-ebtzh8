@@ -24,7 +24,9 @@ export class HomeComponent implements OnInit {
       })
    }
 
-  
+  submitRegistration(){
+    
+  }
 
    
 
