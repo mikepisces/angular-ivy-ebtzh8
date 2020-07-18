@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule,HttpClientModule, FormsModule ],
+  imports:      [ BrowserModule,HttpClientModule, FormsModule, AppRoutingModule ],
   declarations: [ AppComponent, HelloComponent, AdminComponent, HomeComponent ],
 
   providers : [CollegeService],
