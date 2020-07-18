@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,  HttpHeaders } from '@angular/common/http';
-
+import { Observable} from 'rxjs';
 
 @Injectable()
 export class CollegeService{
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getStudents(){
+    return this.http.get('/server/ap1/v1/students');
+  }
 }
 
 
