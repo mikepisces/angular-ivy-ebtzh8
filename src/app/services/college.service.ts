@@ -7,8 +7,16 @@ export class CollegeService{
 
   constructor(private http: HttpClient) { }
 
-  getForms(){
+  getStudentDetails(){
     return this.http.get('/server/ap1/v1/students');
+  }
+
+  getStudentDetails(id: number){
+    return this.http.get('/server/ap1/v1/students/' + id);
+  }
+
+  createStudentForm(student){
+    return this.http.get('/server/ap1/v1/students/' + id);
   }
 }
 

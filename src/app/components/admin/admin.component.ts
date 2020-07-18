@@ -14,12 +14,12 @@ export class AdminComponent implements OnInit {
    public students;
    constructor(private collegeService: CollegeService){   }
    ngOnInit(){
-      this.getStudents();
+      this.getStudentDetails();
    }
 
-   getStudents(){
+   getStudentDetails(){
 
-     this.collegeService.getForms().subscribe(
+     this.collegeService.getStudentDetails().subscribe(
         data => {this.students = data },
         err => console.error(err),
         () => console.log('students loaded')
