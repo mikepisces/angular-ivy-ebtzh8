@@ -9,7 +9,7 @@
     </tr>
     <tr *ngFor="let student of students">
       <td>
-        <a [routerLink] ="['/admin/view', student.id">{{student.name}}</a>
+        <a [routerLink] ="['/admin/view', student.id]">{{student.name}}</a>
       </td>
       <td>
         {{student.email}}
