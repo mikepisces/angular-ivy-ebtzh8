@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-view-registration',
   templateUrl: './view-registration.component.html',
   styleUrls: ['./view-registration.component.css']
 })
@@ -12,35 +12,21 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 
 export class ViewRegistrationComponent implements OnInit {
    
-   studentform: FormGroup;
-   validMessage: string="";
+   public student;
 
    constructor(private collegeService: CollegeService){   }
+
    ngOnInit(){
-      this.studentform = new FormGroup({
-        name: new FormControl('', Validators.required),
-        email:  new FormControl('', Validators.required),
-        phone:  new FormControl('', Validators.required)
-      })
    }
 
-  submitRegistration(){
+  getStudentDetail(id: number){
+    this.collegeService.getStudentDetail(id).subscribe(
 
-    if(this.studentform.valid) {
-      this.validMessage = "Your details for admission have been submitted. Thank you!";
-      this.collegeService.createStudentForm(this.studentform.value).subscribe(
-        data=>{
-          this.studentform.reset();
-          return true;
-        },
-        error=>{
-          return Observable.throw(error);
-        }
-      )
-    }
-    else {
-      this.validMessage = "Please fill out the form before submitting";
-    }
+      data=> { this.student = data;
+      },
+      err=> console.error(err),
+      ()=> console.log('Details loaded')
+    );
   }
 
    
