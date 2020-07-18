@@ -4,6 +4,10 @@ import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   {
+    path : '',
+    component:  HomeComponent
+  },
+  {
     path : 'admin',
     component:  AdminComponent
   }
