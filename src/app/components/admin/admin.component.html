@@ -4,21 +4,21 @@
     <tr>
       <th>Owner Name</th>
       <th>Email</th>
-      <th>Model</th>
+      <th>Phone</th>
       <th class="text-right">Purchase Price</th>
     </tr>
-    <tr *ngFor="let bike of students">
+    <tr *ngFor="let student of students">
       <td>
-        {{bike.name}}
+        <a [routerLink] ="['/admin/view', student.id">{{student.name}}</a>
       </td>
       <td>
-        {{bike.email}}
+        {{student.email}}
       </td>
       <td>
-        {{bike.model}}
+        {{student.phone}}
       </td>
       <td class="text-right">
-        {{bike.purchasePrice}}
+        {{student.purchasePrice}}
       </td>
     </tr>
   </table>

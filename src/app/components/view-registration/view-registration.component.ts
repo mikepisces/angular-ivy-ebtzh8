@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CollegeService} from '../../services/college.service';
 import {Observable} from 'rxjs';
-import { FormControl,FormGroup, Validators } from '@angular/forms';
+import {ActivatedRoute}  from '@angular/router';
 
 @Component({
   selector: 'app-view-registration',
@@ -14,9 +14,10 @@ export class ViewRegistrationComponent implements OnInit {
    
    public student;
 
-   constructor(private collegeService: CollegeService){   }
+   constructor(private collegeService: CollegeService, private route: ActivatedRoute){   }
 
    ngOnInit(){
+     this.getStudentDetail(this.route.snapshot.params.id);
    }
 
   getStudentDetail(id: number){
