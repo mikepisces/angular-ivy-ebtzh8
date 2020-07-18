@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
    public students;
    constructor(private collegeService: CollegeService){   }
    ngOnInit(){
-
+      this.getStudents();
    }
 
    getStudents(){
@@ -28,5 +28,5 @@ export class AdminComponent implements OnInit {
 
    
 
-  title = 'Angular: Getting Started';
+ // title = 'Angular: Getting Started';
 }
