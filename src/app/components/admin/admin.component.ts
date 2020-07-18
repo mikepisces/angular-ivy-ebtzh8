@@ -12,16 +12,18 @@ import {Observable} from 'rxjs';
 export class AdminComponent implements OnInit {
    
    public students;
-   constructor(private collegeService: CollegeService){
-
-   }
+   constructor(private collegeService: CollegeService){   }
    ngOnInit(){
 
    }
 
    getStudents(){
 
-     this.collegeService.getStudents().
+     this.collegeService.getForms().subscribe(
+        data => {this.students = data },
+        err => console.error(err),
+        () => console.log('students loaded')
+     );
    }
 
    

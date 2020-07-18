@@ -7,7 +7,7 @@ export class CollegeService{
 
   constructor(private http: HttpClient) { }
 
-  getStudents(){
+  getForms(){
     return this.http.get('/server/ap1/v1/students');
   }
 }
