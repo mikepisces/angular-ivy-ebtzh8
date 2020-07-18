@@ -16,7 +16,7 @@ export class CollegeService{
     return this.http.get('/server/ap1/v1/students');
   }
 
-  getStudentDetails(id: number){
+  getStudentDetail(id: number){
     return this.http.get('/server/ap1/v1/students/' + id);
   }
 
