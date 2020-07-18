@@ -1,13 +1,4 @@
 /* Add application styles & imports to this file! */
 @import  '~bootstrap/dist/css/bootstrap.min.css';
-div.card-header {
- font-size: large;
-}
+@import './css/student.css';
 
-div.card {
-  margin-top: 10px
-}
-
-.table {
-  margin-top: 10px
-}
