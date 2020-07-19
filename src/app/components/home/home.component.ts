@@ -13,6 +13,7 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
    
    studentform: FormGroup;
+   phonePattern = "^((\\+91-?)|0)?[0-9]{10}$";
    validMessage: string="";
 
    constructor(private collegeService: CollegeService){   }
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
       this.studentform = new FormGroup({
         name: new FormControl('', Validators.required),
         email:  new FormControl('', Validators.required),
-        phone:  new FormControl('', Validators.required)
+        fatherName:  new FormControl('', Validators.required)
       })
    }
 
